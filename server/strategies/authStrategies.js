@@ -23,7 +23,6 @@ const googleStrategy = new GoogleStrategy({
       }
     
       if (!doc) {
-        // console.log("OOps?", profile.email.split('@')[1])
         const newUser = new User({
           googleId: profile.id,
           username: profile.name.givenName,
