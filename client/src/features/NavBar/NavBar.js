@@ -41,7 +41,7 @@ export default function NavBar() {
                 }
                 {
                     loginStatus ? 
-                    (<li><Link to='/addRecipes' >Add Recipes</Link></li>)
+                    (<li><Link to='/addAppointments' >Add Recipes</Link></li>)
                     :
                     (null)
                 }

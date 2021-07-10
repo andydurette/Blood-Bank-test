@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 // import { login, logout, selectLoginStatus, selectUserId, selectUserName } from '../auth/authSlice';
-import { getUserRecipes } from './addRecipeSlice';
+import { getUserAppointment } from './addAppointmentSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import EditorJs from 'react-editor-js';
 import { EDITOR_JS_TOOLS } from "./constants";
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default function AddRecipePage() {
+export default function AddAppointmentPage() {
 
     // const dispatch = useDispatch();
 
@@ -76,7 +76,11 @@ export default function AddRecipePage() {
             onChange={handleChange}
             /> */}
         </Grid>
-        <Grid item xs={12} className={classes.styleBox}>
+        <Grid container item xs={12} >
+        <Grid item xs={2}>
+          <TextField required id="standard-required" label="Required" defaultValue="Hello World" />
+        </Grid>
+        <Grid item xs={10} className={classes.styleBox}>
             {/* <Typography variant='body2'>Instructions</Typography> */}
             {/* <TextareaAutosize id="instructionField" aria-label="minimum height" rowsMin={3} placeholder="Minimum 3 rows" /> */}
             <EditorJs
@@ -86,6 +90,11 @@ export default function AddRecipePage() {
               data={data}
             />
         </Grid>
+       
+
+        </Grid>
+        
+       
         <Grid item xs={12}>
             <Button  variant="contained" color="primary">Submit</Button>
         </Grid>

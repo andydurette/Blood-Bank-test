@@ -10,7 +10,7 @@ import router from './server/routes/index.js';
 import passportSetup from './server/middleware/passport/passport.js';
 
 //Initiate Server
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4001;
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // Connect to Database
@@ -20,7 +20,7 @@ connectDB();
 passportSetup(app);
 app.use(express.json());
 if(process.env.NODE_ENV === 'production') {
-    app.use(cors({ origin: "https://shared-recipes.herokuapp.com/", credentials: true }));
+    app.use(cors({ origin: "https://test-blood-bank.herokuapp.com/", credentials: true }));
 }else{
     app.use(cors({ origin: "http://localhost:3000", credentials: true }));  
 }

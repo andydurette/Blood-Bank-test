@@ -13,7 +13,7 @@ import { Strategy as GitHubStrategy } from 'passport-github';
 const googleStrategy = new GoogleStrategy({
     clientID: `${process.env.GOOGLE_CLIENT_ID}`,
     clientSecret: `${process.env.GOOGLE_CLIENT_SECRET}`,
-    callbackURL: process.env.NODE_ENV === 'production' ? "https://shared-recipes.herokuapp.com/auth/google/callback" : "/auth/google/callback"
+    callbackURL: process.env.NODE_ENV === 'production' ? "https://test-blood-bank.herokuapp.com/auth/google/callback" : "/auth/google/callback"
   },
   function(_, __, profile, cb) {
     User.findOne({googleId: profile.id}, async (err, doc) => {
@@ -21,11 +21,14 @@ const googleStrategy = new GoogleStrategy({
       if(err) {
         return cb(err, null);
       }
-
+    
       if (!doc) {
-        const newUser = new user.User({
+        // console.log("OOps?", profile.email.split('@')[1])
+        const newUser = new User({
           googleId: profile.id,
-          username: profile.name.givenName
+          username: profile.name.givenName,
+          authType: (profile.emails[0].value.split('@')[1] !== 'instructors.2u.com' ? 'public' : 'admin'),
+          userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo'
         });
 
         await newUser.save();

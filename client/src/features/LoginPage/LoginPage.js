@@ -12,7 +12,7 @@ export default function LoginPage() {
         const siteSettingUrl = window.location.origin;
         console.log('siteUrl', siteSettingUrl)
         if(siteSettingUrl === 'http://localhost:3000'){
-            setSiteUrl('http://localhost:4000');
+            setSiteUrl('http://localhost:4001');
         }else{
             setSiteUrl(siteUrl);
         }
@@ -21,7 +21,12 @@ export default function LoginPage() {
     const googleLogin = () => {
         console.log(`${siteUrl}/auth/google`);
         // window.open(`${siteUrl}/auth/google`, "_self");
-        window.open('https://shared-recipes.herokuapp.com/auth/google', "_self");
+        
+        if(siteUrl === 'https://test-blood-bank.herokuapp.com/' ){
+            window.open('https://test-blood-bank.herokuapp.com/auth/google', "_self");
+        }else{
+            window.open('http://localhost:4001/auth/google', "_self");
+        }
     }
 
     const githubLogin = () => {

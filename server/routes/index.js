@@ -1,4 +1,3 @@
-import passport from 'passport';
 import express from 'express';
 import apiRouter from './api.js';
 import authRouter from './auth.js';

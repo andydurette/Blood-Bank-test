@@ -3,13 +3,13 @@ import axios from 'axios';
 
 // Thunks
 
-export const getUserRecipes = createAsyncThunk(
+export const getUserAppointment = createAsyncThunk(
     'api/userRecipe',
     async (payload, thunkAPI) => {
         const { getState } = thunkAPI;
         const state = getState();
       try {
-        const response = await axios.post("/api/userRecipe", { params: {user_id: state.auth.userId}});
+        const response = await axios.post("/api/userUserAppointment", { params: {user_id: state.auth.userId}});
         console.log(response.data);
         return response.data
       } catch (err) {
@@ -26,11 +26,11 @@ export const getUserRecipes = createAsyncThunk(
 //   })
 
 const initialState = {
-    addRecipes: {},
+    addAppointment: {},
   };
 
-const addRecipeSlice = createSlice({
-    name: 'addRecipe',
+const addAppointmentSlice = createSlice({
+    name: 'addAppointment',
     initialState,
     reducers: {},
     // extraReducers: {
@@ -45,4 +45,4 @@ const addRecipeSlice = createSlice({
 
 // export const selectMyRecipe = (state) => state.auth.loggedIn;
 
-export default addRecipeSlice.reducer;
+export default addAppointmentSlice.reducer;

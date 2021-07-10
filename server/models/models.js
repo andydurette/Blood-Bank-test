@@ -17,6 +17,10 @@ const userSchema = new Schema({
     username: {
         required: true,
         type: String,
+    },
+    authType: {
+        required: true,
+        type: String,
     }
 });
 
