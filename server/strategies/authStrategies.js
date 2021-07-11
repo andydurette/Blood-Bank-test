@@ -26,7 +26,7 @@ const googleStrategy = new GoogleStrategy({
         const newUser = new User({
           googleId: profile.id,
           username: profile.name.givenName,
-          authType: (profile.emails[0].value.split('@')[1] !== 'logicaldox.com' ? 'public' : 'admin'),
+          authType: (profile.emails[0].value.split('@')[1] !== 'falsecompany.com' ? 'public' : 'admin'),
           userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo'
         });
 

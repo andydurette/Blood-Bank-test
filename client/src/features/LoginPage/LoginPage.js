@@ -47,14 +47,14 @@ export default function LoginPage() {
                     <img src={googleImage} alt="Google Icon"/>
                     <p>Login with google</p>
                 </div>
-                <div className={`${styles.googleContainer} ${styles.githubContainer}`} onClick={githubLogin}>
+                {/* <div className={`${styles.googleContainer} ${styles.githubContainer}`} onClick={githubLogin}>
                     <img src={githubImage} alt="Github Icon"/>
                     <p>Login with Github</p>
                 </div>
                 <div className={`${styles.googleContainer} ${styles.twitterContainer}`} onClick={twitterLogin}>
                     <img src={twitterImage} alt="Github Icon"/>
                     <p>Login with Twitter</p>
-                </div>
+                </div> */}
         </div>
     </div>
     )

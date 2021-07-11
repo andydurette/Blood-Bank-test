@@ -16,7 +16,7 @@ In the project directory, you can run:
  There should be 2 types of users that can log into the application: Public Users and Admin Users.
 
 **Requirement 1 Completion:** Success
-Depending on the email after the @example.com if it is either a public or admin account. If @instructors.2u.com it will be admin for this example Ed has such an account and will be able to see the difference in pages sign in with one of these accounts. That said I didn't implement checking if an account was an admin account or not when implementing queries as it would have taken more and required a more finished front end.
+Depending on the email after the @example.com if it is either a public or admin account in this case I set it to falsecompany.com. 
 
 **Requirement 2**
 As any User I should be able to log into my account with an email address and password that will have my account specific information.
@@ -40,19 +40,30 @@ As a Public User I should be able to cancel or reschedule my appointments.
 
 **Requirement 4 & 5 Completion:** Success
 
+**Requirement 6 & 7:** Not completed, at this point I had already worked more than a few hours which I was asked to stop at.
+As an Admin User I should be able to manage the donation locations, ability to change information such as address, open time slots and appointment length.
+As an Admin User I should be able to see a report of how much blood has been collected at each location over a given period of time.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Run Locally
 
-In the project directory, you can run:
+To run locally follow the following steps
+
+1. In your local mongo instance make a database called blood-bank then in your mongo console run use blood-bank.
+2. Next you want to the seed the database with some appointments so we want to use the seed file from the coding terminal.
+
+### `npm run seed`
+
+3. Next You need to run the site.
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+4. Open [http://localhost:3000/login](http://localhost:3000/login) to make an account with the googleOath.
+5. Now you can either check your userId from the console, redux state or from a tool like mongoDB compass.
+6. I didn't make a front end to use all the functionality as I didn't have time, so I opted to test all my work with insomnia which I exported the test cases from and included in the readMeAdditons folder. Insomnia for download can be found here https://insomnia.rest/
+7. Import the cases from the insomnia json file to your insomnia document and use it to run all the functionality. Grab the proper id's from mongoCompass or alike to get the proper ids.
+8. The end 
 
 
 
