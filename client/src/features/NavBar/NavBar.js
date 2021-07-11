@@ -12,11 +12,11 @@ export default function NavBar() {
     const loginStatus = useSelector(selectLoginStatus);
 
     const logout = () => {
-        console.log("Hi?")
+        // console.log("Hi?")
         axios.get("/auth/logout", {
             withCredentials: true
         }).then((res) => {
-            console.log("Hi? again")
+            // console.log("Hi? again")
             if (res.data === "done") {
                 window.location.href = "/"
             }
@@ -35,13 +35,13 @@ export default function NavBar() {
                 <li><Link to='/' >Home</Link></li>
                 {
                     loginStatus ? 
-                    (<li><Link to='/myRecipes' >My Recipes</Link></li>)
+                    (<li><Link to='/myAppointments' >My Appointment</Link></li>)
                     :
                     (null)
                 }
                 {
                     loginStatus ? 
-                    (<li><Link to='/addAppointments' >Add Recipes</Link></li>)
+                    (<li><Link to='/addAppointments' >Book an Appointments</Link></li>)
                     :
                     (null)
                 }

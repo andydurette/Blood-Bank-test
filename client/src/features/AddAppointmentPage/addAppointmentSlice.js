@@ -4,7 +4,7 @@ import axios from 'axios';
 // Thunks
 
 export const getUserAppointment = createAsyncThunk(
-    'api/userRecipe',
+    'api/userAppointment',
     async (payload, thunkAPI) => {
         const { getState } = thunkAPI;
         const state = getState();
@@ -34,15 +34,15 @@ const addAppointmentSlice = createSlice({
     initialState,
     reducers: {},
     // extraReducers: {
-    //     [getUserRecipes.fulfilled] : (state, action) => {
-    //         state.myRecipes = action.payload;
+    //     [getUserAppointments.fulfilled] : (state, action) => {
+    //         state.myAppointmentss = action.payload;
     //     },
-    //     [getUserRecipes.rejected] : (state, action) => {
+    //     [getUserAppointments.rejected] : (state, action) => {
             
     //     },
     // },
 });
 
-// export const selectMyRecipe = (state) => state.auth.loggedIn;
+// export const selectMyAppointments = (state) => state.auth.loggedIn;
 
 export default addAppointmentSlice.reducer;

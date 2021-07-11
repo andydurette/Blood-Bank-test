@@ -21,33 +21,37 @@ const userSchema = new Schema({
     authType: {
         required: true,
         type: String,
+    },
+    address: {
+        required: false,
+        type: String,
     }
 });
 
-const createRecipeSchema = new Schema({
+const appointmentSchema = new Schema({
+    location: {
+        required: false,
+        type: String,
+    },
+    booked: {
+        required: false,
+        type: Boolean,
+    },
+    time: {
+        required: false,
+        type: Date,
+    },
     user_id: {
-        required: true,
+        required: false,
         type: String,
     },
-    imageUrl: {
-        required: true,
-        type: String,
-    },
-    cuisine: {
-        required: true,
-        type: String,
-    },
-    name: {
-        required: true,
-        type: String,
-    },
-    instructions: {
-        required: true,
-        type: String,
-    },
+    mlOfBloodDonated: {
+        required: false,
+        type: Number,
+    }
 }, {timestamps: true});
 
 const User = mongoose.model("User", userSchema);
-const CreateRecipe = mongoose.model("CreateRecipe", createRecipeSchema);
+const Appointment = mongoose.model("Appointment", appointmentSchema);
 
-export { User, CreateRecipe };
+export { User, Appointment };

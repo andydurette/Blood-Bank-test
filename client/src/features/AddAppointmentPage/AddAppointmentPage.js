@@ -42,7 +42,7 @@ export default function AddAppointmentPage() {
     // const dispatch = useDispatch();
 
     // useEffect(() => {
-    //     dispatch(getUserRecipes());
+    //     dispatch(getUserAppointments());
     // }, [dispatch])
 
     const classes = useStyles();
@@ -65,8 +65,8 @@ export default function AddAppointmentPage() {
         <div className={classes.root}>
       <Grid container xs={12}>
         <Grid item xs={12}>
-        <Typography variant='h3'>Add a Recipe</Typography>
-            <Typography variant='body2'>Recipe Name</Typography>
+        <Typography variant='h3'>Add a Appointment</Typography>
+            <Typography variant='body2'>Appoint Time</Typography>
             {/* <TextField
             id="standard-multiline-flexible"
             // label="Multiline"

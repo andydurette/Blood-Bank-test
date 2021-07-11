@@ -8,11 +8,14 @@ export default function HomePage() {
     const loginStatus = useSelector(selectLoginStatus);
 
     return  (
-        <div>
+        <div style={{padding: 10}}>
         {
         loginStatus ? (
             <h1>Welcome back {userName}</h1>
-        ):  <h1>Welcome to My Website</h1>
+        ):  <>
+            <h1>Welcome to Blood Bank</h1>
+            <p>please log in or create and account to book and view your appointments</p>
+            </>
         }
         </div>
     )

@@ -1,13 +1,13 @@
 import { combineReducers } from '@reduxjs/toolkit';
 /// /
 import authReducer from '../features/auth/authSlice';
-import myRecipesReducer from '../features/MyRecipesPage/myRecipesSlice';
-import AddAppointmentReducer from '../features/AddAppointmentPage/AddAppointmentSlice';
+import myAppointmentsReducer from '../features/MyAppointmentsPage/myAppointmentsSlice';
+import addAppointmentReducer from '../features/AddAppointmentPage/addAppointmentSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  myRecipes: myRecipesReducer,
-  addAppointment: AddAppointmentReducer,
+  myAppointments: myAppointmentsReducer,
+  addAppointment: addAppointmentReducer,
 });
 
 export default rootReducer;

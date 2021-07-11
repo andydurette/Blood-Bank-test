@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from '../features/HomePage/HomePage';
 import LoginPage from '../features/LoginPage/LoginPage';
-import MyRecipesPage from '../features/MyRecipesPage/MyRecipesPage';
+import myAppointmentsPage from '../features/MyAppointmentsPage/MyAppointmentsPage';
 import addAppointmentPage from '../features/AddAppointmentPage/AddAppointmentPage';
 import NavBar from '../features/NavBar/NavBar';
 import PrivateRoute from '../Components/PrivateRoute/PrivateRoute.js'
@@ -38,7 +38,7 @@ function App() {
               <Route path='/login' component={LoginPage} />
             )
           }
-          <PrivateRoute path="/myRecipes" component={MyRecipesPage} />
+          <PrivateRoute path="/myAppointments" component={myAppointmentsPage} />
           <PrivateRoute path="/addAppointment" component={addAppointmentPage} />
         </Switch>
       </Router>

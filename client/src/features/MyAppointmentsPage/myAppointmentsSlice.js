@@ -3,14 +3,13 @@ import axios from 'axios';
 
 // Thunks
 
-export const getUserRecipes = createAsyncThunk(
-    'api/userRecipe',
+export const getUserAppointments = createAsyncThunk(
+    'api/userAppointments',
     async (payload, thunkAPI) => {
         const { getState } = thunkAPI;
         const state = getState();
       try {
-        const response = await axios.get("/api/userRecipe", { params: {user_id: state.auth.userId}});
-        console.log(response.data);
+        const response = await axios.get("/api/userAppointments", { params: {user_id: state.auth.userId}});
         return response.data
       } catch (err) {
         console.log(err);
@@ -26,23 +25,23 @@ export const getUserRecipes = createAsyncThunk(
 //   })
 
 const initialState = {
-    myRecipes: {},
+    myAppointments: {},
   };
 
-const myRecipesSlice = createSlice({
-    name: 'myRecipes',
+const myAppointmentsSlice = createSlice({
+    name: 'myAppointments',
     initialState,
     reducers: {},
     extraReducers: {
-        [getUserRecipes.fulfilled] : (state, action) => {
-            state.myRecipes = action.payload;
+        [getUserAppointments.fulfilled] : (state, action) => {
+            state.myAppointments = action.payload;
         },
-        [getUserRecipes.rejected] : (state, action) => {
+        [getUserAppointments.rejected] : (state, action) => {
             
         },
     },
 });
 
-export const selectMyRecipe = (state) => state.auth.loggedIn;
+export const selectMyAppointments = (state) => state.auth.loggedIn;
 
-export default myRecipesSlice.reducer;
+export default myAppointmentsSlice.reducer;
