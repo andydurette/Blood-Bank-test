@@ -1,5 +1,4 @@
 # Book Giving Blood Test Application
-Test for University of Junior Application Developer at logicalDox
 
 MERN stack application that add users to a nosql mongo database using the google oath passport strategy and allows them to book or cancel blood giving appointments.
 
