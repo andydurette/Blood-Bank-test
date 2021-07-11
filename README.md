@@ -1,8 +1,8 @@
 # Book Giving Blood Test Application
 
-MERN stack application that add users to a nosql mongo database using the google oath passport strategy and allows them to book or cancel blood giving appointments.
+MERN stack application that adds users to a nosql mongo database using the google oath passport strategy and allows them to book or cancel blood giving appointments.
 
-The front end is unfinished aside from creating and account however the backend operations have been developed and can be used in a local environment.
+The front end is unfinished aside from creating an account however the backend operations have been developed and can be used in a local environment.
 
 This is accomplished using REST to complete CRUD operations to view and modify data.
 
